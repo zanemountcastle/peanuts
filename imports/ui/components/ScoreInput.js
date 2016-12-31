@@ -1,7 +1,7 @@
 /* eslint-disable max-len, no-return-assign */
 
 import React from 'react';
-import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { FormGroup, FormControl, Button, Form } from 'react-bootstrap';
 import scorer from '../../modules/scorer.js';
 
 export default class ScoreInput extends React.Component {

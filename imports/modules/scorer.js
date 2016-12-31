@@ -28,7 +28,6 @@ const handleUpdate = () => {
   const confirmation = 'Score updated!';
   const uname = (Meteor.user().profile.name.first + Meteor.user().profile.name.last).toLowerCase();
   const score = Scores.findOne({ username: uname }); // Find score by current user
-  console.log(uname);
   const update = {
     _id: score._id,
     score: parseInt(document.querySelector('[name="score"]').value.trim(), 10),

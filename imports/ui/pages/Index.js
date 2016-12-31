@@ -11,6 +11,7 @@ const Index = () => (
           <h4 className="pull-left">Scores</h4>
         </div>
         <ScoreInput />
+        <br />
         <ScoresList />
       </Col>
     </Row>

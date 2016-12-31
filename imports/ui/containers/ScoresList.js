@@ -7,7 +7,9 @@ import Loading from '../components/Loading.js';
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('scores.list');
   if (subscription.ready()) {
-    const scores = Scores.find().fetch();
+    const scores = Scores.find({}, {
+      sort: { score: -1 },
+    }).fetch();
     onData(null, { scores });
   }
 };

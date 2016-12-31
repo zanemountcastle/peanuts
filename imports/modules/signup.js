@@ -26,12 +26,11 @@ const handleInit = () => {
     gameId: '123',
     _id: '123',
   };
-  console.log("here");
   initScore.call(init, (error) => {
     if (error) {
       Bert.alert(error.reason, 'danger');
     } else {
-      Bert.alert('Score initialized!', 'success');
+      // Bert.alert('Score initialized!', 'success');
     }
   });
 };
