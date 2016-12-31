@@ -1,5 +1,2 @@
-import '../../api/documents/methods.js';
-import '../../api/documents/server/publications.js';
-
 import '../../api/scores/methods.js';
 import '../../api/scores/server/publications.js';
