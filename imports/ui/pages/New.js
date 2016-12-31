@@ -1,19 +1,19 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import GameWelcome from '../components/GameWelcome.js';
+import NewGame from '../components/NewGame.js';
 
-const Index = () => (
+const Join = () => (
   <div className="Documents">
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
-          <h4 className="pull-left">Welcome</h4>
+          <h4 className="pull-left">New Game</h4>
         </div>
         <br />
-        <GameWelcome />
+        <NewGame />
       </Col>
     </Row>
   </div>
 );
 
-export default Index;
+export default Join;

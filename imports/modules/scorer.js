@@ -10,15 +10,14 @@ let component;
 
 const handleInit = () => {
   const init = {
-    username: 'zane',
-    gameId: '123',
-    _id: '123',
+    username: (Meteor.user().profile.name.first + Meteor.user().profile.name.last).toLowerCase(),
+    gameId: document.gameId,
   };
   initScore.call(init, (error) => {
     if (error) {
       Bert.alert(error.reason, 'danger');
     } else {
-      Bert.alert('Score initialized!', 'success');
+      Bert.alert('User initialized!', 'success');
     }
   });
 };
