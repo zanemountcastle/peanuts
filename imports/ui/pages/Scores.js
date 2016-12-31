@@ -9,6 +9,7 @@ const Scores = ({ params }) => (
       <Col xs={ 12 }>
         <div className="page-header clearfix">
           <h4 className="pull-left">Scores</h4>
+          <h4 className="pull-right">Game ID: {params.gameId}</h4>
         </div>
         <ScoreInput />
         <br />
