@@ -26,7 +26,12 @@ const handleUpdate = () => {
   const { doc } = component.props;
   const confirmation = 'Score updated!';
   const uname = (Meteor.user().profile.name.first + Meteor.user().profile.name.last).toLowerCase();
-  const score = Scores.findOne({ username: uname }); // Find score by current user
+  const score = Scores.findOne({
+    $and: [
+      { username: uname },
+      { gameId: component.props.gameId },
+    ],
+  }); // Find score by current user
   const update = {
     _id: score._id,
     score: parseInt(document.querySelector('[name="score"]').value.trim(), 10),
@@ -62,5 +67,6 @@ const validate = () => {
 
 export default function scorer(options) {
   component = options.component;
+  gameId = options.gameId;
   validate();
 }

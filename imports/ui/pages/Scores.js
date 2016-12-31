@@ -11,7 +11,7 @@ const Scores = ({ params }) => (
           <h4 className="pull-left">Scores</h4>
           <h4 className="pull-right">Game ID: {params.gameId}</h4>
         </div>
-        <ScoreInput />
+        <ScoreInput gameId={params.gameId}/>
         <br />
         <ScoresList gameId={params.gameId}/>
       </Col>
