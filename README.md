@@ -17,7 +17,7 @@ upon to familiarize myself with the Meteor ecosystem.
 
 ## Getting Started
 
-To run Peanuts locally, run the following commands.
+To run Peanuts locally, run the following:
 
 ```
 git clone https://github.com/zanemountcastle/peanuts.git
