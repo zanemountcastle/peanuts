@@ -99,7 +99,7 @@ Your Peanuts application should be live at your EC2 instance's public IP address
 
 The MIT License
 
-Copyright (c) 2016 Zane Mountcastle
+Copyright (c) 2018 Zane Mountcastle
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
