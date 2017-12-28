@@ -3,5 +3,6 @@ settings-development.json
 settings-production.json
 settings.json
 npm-debug.log
+.deploy/
 
 node_modules
