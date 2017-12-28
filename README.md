@@ -15,6 +15,86 @@ upon to familiarize myself with the Meteor ecosystem.
 - [Node.js](http://nodejs.org/) for a Javascript server
 - [MongoDB](https://www.mongodb.com/) for a database layer
 
+## Getting Started
+
+To run Peanuts locally, run the following commands.
+
+```
+git clone https://github.com/zanemountcastle/peanuts.git
+cd peanuts
+meteor npm install
+meteor
+```
+
+## Deploy
+
+I prefer to deploy Peanuts to an Amazon EC2 instance rather than deploying to Galaxy because of its more generous free tier. To deploy Peanuts to an Amazon EC2 instance using Meteor Up, run the following locally:
+
+```
+npm install -g mup
+cd peanuts
+mkdir .deploy && cd .deploy
+mup init
+```
+
+The `/peanuts/.deploy` directory will then have two files: `settings.json` and `mup.js`. Edit `mup.js` as needed. 
+
+Below is a basic  implementation. Replace `<EC2_PUBLIC_IP>`, `<EC2_PEM_FILE>`, `<PATH_TO_APP>`, `<APPLICATION_URL>`, `<MONGODB_SERVER_URL>` with your server and application information as necessary.
+
+```
+module.exports = {
+  servers: {
+    one: {
+      host: '<EC2_PUBLIC_IP>',
+      username: 'ubuntu',
+      pem: '<EC2_PEM_FILE>'
+    }
+  },
+
+  app: {
+    name: 'Peanuts',
+    path: '<PATH_TO_APP>',
+
+    servers: {
+      one: {},
+    },
+
+    buildOptions: {
+      serverOnly: true,
+    },
+
+    env: {
+      ROOT_URL: '<APPLICATION_URL>',
+      MONGO_URL: '<MONGODB_SERVER_URL>'
+    },
+
+    docker: {
+      image: 'abernix/meteord:node-8.4.0-base',
+      prepareBundle: false
+    },
+
+    enableUploadProgressBar: true
+  },
+
+  mongo: {
+    version: '3.4.1',
+    servers: {
+      one: {}
+    }
+  }
+};
+```
+*Note: A free MongoDB server can be obtained from [mLab](https://mlab.com/create).*
+
+Next, run the following commands:
+
+```
+mup setup
+mup deploy
+```
+
+Your Peanuts application should be live at your EC2 instance's public IP address.
+
 ## License
 
 The MIT License
